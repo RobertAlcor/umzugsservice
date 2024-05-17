@@ -1,7 +1,10 @@
 $(document).ready(function () {
+  console.log("Document ready - Initializing...");
+
   // Besichtigung Formular ein-/ausblenden
   $("#besichtigung-dropdown").change(function () {
     var value = $(this).val();
+    console.log("Besichtigung dropdown changed to:", value);
     if (value === "ja") {
       $("#besichtigung-form").show();
       hideSteps(); // Versteckt Step 1 bis 6
@@ -17,17 +20,13 @@ $(document).ready(function () {
   // Navigation zwischen den Schritten ohne Validierung
   $(".next-step").click(function () {
     var nextStep = $(this).data("next");
+    console.log("Next step button clicked, navigating to step:", nextStep);
     navigateToStep(nextStep);
-    /*
-    // Navigation zwischen den Schritten mit Validierung
-    if (validateStep(nextStep - 1)) {
-      navigateToStep(nextStep);
-    }
-    */
   });
 
   $(".previous-step").click(function () {
     var previousStep = $(this).data("previous");
+    console.log("Previous step button clicked, navigating to step:", previousStep);
     navigateToStep(previousStep);
   });
 
@@ -40,22 +39,26 @@ $(document).ready(function () {
 
 // Funktion zum Ein-/Ausblenden von Steps
 function showSteps() {
+  console.log("Showing steps...");
   $("#umzugsrechner-form .form-step").removeClass("active");
   $("#step-1").addClass("active");
 }
 
 function hideSteps() {
+  console.log("Hiding steps...");
   $("#umzugsrechner-form .form-step").removeClass("active");
 }
 
 // Funktion zum Ein-/Ausblenden von Formularen
 function toggleFormVisibility(showFirst, firstFormSelector, secondFormSelector) {
+  console.log(`Toggling form visibility: showFirst=${showFirst}, firstFormSelector=${firstFormSelector}, secondFormSelector=${secondFormSelector}`);
   $(firstFormSelector).toggle(showFirst);
   $(secondFormSelector).toggle(!showFirst);
 }
 
 // Initialisiert die Logik für Checkbox und Dropdown-Menüs zur Anzeige zusätzlicher Informationen
 function initConditionalDisplay() {
+  console.log("Initializing conditional display...");
   $("#kartons-liefern").change(function () {
     toggleVisibility("delivery-date", $(this).is(":checked"));
   });
@@ -70,58 +73,31 @@ function initConditionalDisplay() {
 
 // Allgemeine Funktion zum Ein- und Ausblenden von Elementen
 function toggleVisibility(elementId, condition) {
+  console.log(`Toggling visibility of ${elementId}: ${condition}`);
   $("#" + elementId).toggle(condition);
 }
 
 // Navigation zwischen den Schritten
+let currentStep = 0; // Initialize to the first step
 function navigateToStep(step) {
+  currentStep = step; // Update the current step globally
+  console.log("Navigating to step:", step);
   showStep(step);
   updateProgressBar(step);
 }
 
 // Funktion zum Anzeigen von Steps
 function showStep(step) {
-  $(".form-step").hide();
-  $("#step-" + step).show();
+  console.log("Showing step:", step);
+  $(".form-step").removeClass("active");
+  $("#step-" + step).addClass("active");
 }
 
-/*
-// Validiert ein Formular
-function validateStep(step) {
-  return validateForm("#step-" + step);
-}
-
-function validateForm(formSelector) {
-  var isValid = true;
-  $(formSelector)
-    .find("input, select, textarea")
-    .each(function () {
-      var element = $(this);
-      if (element.prop("required")) {
-        if (!element.val()) {
-          isValid = false;
-          element.addClass("is-invalid");
-        } else {
-          element.removeClass("is-invalid");
-        }
-      }
-      if (element.attr("type") === "email" && element.val()) {
-        var pattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-        if (!pattern.test(element.val())) {
-          isValid = false;
-          element.addClass("is-invalid");
-        } else {
-          element.removeClass("is-invalid");
-        }
-      }
-    });
-  return isValid;
-}
-*/
-
+// Fortschrittsanzeige aktualisieren
 function updateProgressBar(currentStep) {
   var totalSteps = $(".form-step").length;
   var progress = ((currentStep + 1) / totalSteps) * 100;
+  console.log(`Updating progress bar: step=${currentStep}, progress=${progress}%`);
   $(".progress-bar")
     .css("width", progress + "%")
     .attr("aria-valuenow", progress)
@@ -130,6 +106,7 @@ function updateProgressBar(currentStep) {
 
 // Lädt die Raumdaten aus einer JSON-Datei
 function loadRooms() {
+  console.log("Loading rooms...");
   $.getJSON("/json/moebelinventar.json", function (data) { // Passe den Pfad hier an
     var roomHtml = "";
     $.each(data, function (room) {
@@ -141,6 +118,7 @@ function loadRooms() {
         "</button>";
     });
     $("#room-buttons").html(roomHtml);
+    console.log("Loaded rooms:", data);
   }).fail(function (jqxhr, textStatus, error) {
     var err = textStatus + ", " + error;
     console.error("Failed to load room data: " + err);
@@ -150,6 +128,7 @@ function loadRooms() {
 
 // Lädt die Möbelstücke für einen spezifischen Raum
 window.loadFurnitureItems = function (room) {
+  console.log("Loading furniture items for room:", room);
   $.getJSON("/json/moebelinventar.json", function (data) { // Passe den Pfad hier an
     var furnitureHtml = "";
     var items = data[room];
@@ -157,6 +136,7 @@ window.loadFurnitureItems = function (room) {
       furnitureHtml += createFurnitureHtml(furniture, volume, room);
     });
     $("#furniture-selection").html(furnitureHtml);
+    console.log("Loaded furniture items for room:", room, items);
   }).fail(function (jqxhr, textStatus, error) {
     var err = textStatus + ", " + error;
     console.error("Failed to load furniture items: " + err);
@@ -166,6 +146,7 @@ window.loadFurnitureItems = function (room) {
 
 // Erzeugt das HTML für ein einzelnes Möbelstück
 function createFurnitureHtml(furniture, volume, room) {
+  console.log("Creating furniture HTML for:", furniture);
   var formattedFurniture = furniture.replace("_", " ");
   return (
     '<div class="furniture-item">' +
@@ -185,8 +166,8 @@ function createFurnitureHtml(furniture, volume, room) {
     "', " +
     volume +
     ", 1, '" +
-    room + 
-    "')\">+</button>' + // Möbelstück hinzufügen 
+    room +
+    "')\">+</button>'" +
     '<label class="form-label ms-3">' + 
     formattedFurniture +
     " </label>" +
@@ -196,15 +177,18 @@ function createFurnitureHtml(furniture, volume, room) {
 
 // Ändert die Anzahl der Möbelstücke und aktualisiert die Inventarliste
 window.changeFurnitureCount = function (furnitureId, volume, delta, room) {
+  console.log("Changing furniture count for:", furnitureId, "Delta:", delta);
   var countInput = $("#" + furnitureId + "-count");
   var currentCount = parseInt(countInput.val()) + delta;
   currentCount = Math.max(0, Math.min(currentCount, 99)); // Limitiert den Wert zwischen 0 und 99
   countInput.val(currentCount);
   updateInventoryList(furnitureId, volume, room);
+  console.log("New count for", furnitureId, "is", currentCount);
 };
 
 // Aktualisiert die Inventarliste auf der Benutzeroberfläche
 function updateInventoryList(furnitureId, volume, room) {
+  console.log("Updating inventory list for:", furnitureId);
   var count = parseInt($("#" + furnitureId + "-count").val());
   var listItem = $("#" + furnitureId + "-list-item");
   if (count > 0) {
@@ -230,10 +214,12 @@ function updateInventoryList(furnitureId, volume, room) {
     listItem.remove();
   }
   calculateTotalVolume();
+  console.log("Updated inventory list for:", furnitureId);
 }
 
 // Berechnet das gesamte Volumen aller ausgewählten Möbelstücke
 function calculateTotalVolume() {
+  console.log("Calculating total volume...");
   var totalVolume = 0;
   $("#inventory-list li").each(function () {
     var volume = parseFloat(
@@ -244,10 +230,12 @@ function calculateTotalVolume() {
     totalVolume += volume;
   });
   $("#total-volume").text(totalVolume.toFixed(2) + " m³");
+  console.log("Total volume is:", totalVolume);
 }
 
 // Generiert die Zusammenfassung aller Eingaben für die Überprüfung durch den Benutzer
 function generateSummary() {
+  console.log("Generating summary...");
   var summaryHtml = '<table class="table table-striped">';
   summaryHtml +=
     "<thead><tr><th>BEZEICHNUNG</th><th>Ihre Angaben</th></tr></thead><tbody>";
@@ -296,6 +284,7 @@ function generateSummary() {
 
 // PDF erstellen und speichern
 function downloadPDF() {
+  console.log("Downloading PDF...");
   // Verwendet jQuery, um auf das Element zuzugreifen
   var element = $("#summary")[0]; // Zugriff auf das native DOM-Element
 
@@ -328,6 +317,7 @@ function downloadPDF() {
 
 // Fortschrittsanzeige aktualisieren
 $(document).ready(function () {
+  console.log("Initializing progress bar...");
   const progressBar = $(".progress-bar");
   let progress = 16.66; // Start bei Schritt 1 von 6
 
@@ -338,11 +328,27 @@ $(document).ready(function () {
     progressBar.css("width", `${progress}%`);
     progressBar.attr("aria-valuenow", progress);
     progressBar.text(`Schritt ${step} von ${totalSteps}`);
+    console.log("Updated progress to step:", step);
   }
 
   // Beispiel für die Aktualisierung des Fortschritts (dies sollte an die Formularschritte gebunden sein)
   updateProgress(1); // Dies sollte dynamisch basierend auf den Formularschritten aktualisiert werden
 });
 
-
-// Path: assets/js/ur.js
+window.loadFurnitureItems = function (room) {
+  console.log("Loading furniture items for room:", room);
+  $.getJSON("/json/moebelinventar.json", function (data) { // Passe den Pfad hier an
+    var furnitureHtml = "";
+    var items = data[room];
+    $.each(items, function (furniture, volume) {
+      furnitureHtml += createFurnitureHtml(furniture, volume, room);
+    });
+    $("#furniture-selection").html(furnitureHtml);
+    console.log("Loaded furniture items for room:", room, items);
+    navigateToStep(4); // Ensure we stay on step 4 after loading furniture items
+  }).fail(function (jqxhr, textStatus, error) {
+    var err = textStatus + ", " + error;
+    console.error("Failed to load furniture items: " + err);
+    alert("Fehler beim Laden der Möbelstücke. Bitte versuchen Sie es später erneut. Details: " + err);
+  });
+};
