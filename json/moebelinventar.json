@@ -1,0 +1,78 @@
+{
+    "Wohnzimmer": {
+        "Sofa": 2,
+        "Sessel": 0.5,
+        "Couchtisch": 0.3,
+        "Fernseher_Schrank": 0.75,
+        "Buecherregal": 1.25,
+        "Wohnwand": 2.5,
+        "Stehlampen": 0.3,
+        "Teppich": 0.5,
+        "Fernseher": 0.3
+    },
+    "Esszimmer": {
+        "Esstisch": 1.75,
+        "Stuehle": 0.75,
+        "Buffet": 1.5,
+        "Vitrine": 1.25,
+        "Barwagen": 0.4,
+        "Kerzenstaender": 0.2
+    },
+    "Kueche": {
+        "Kuechenschraenke": 2,
+        "Kuehlschrank": 1.25,
+        "Geschirrspueler": 1,
+        "Kuechentisch": 1,
+        "Kuechenstuehle": 0.5,
+        "Mikrowelle": 0.3,
+        "Toaster": 0.2,
+        "Kaffeemaschine": 0.3,
+        "Backofen": 1.2
+    },
+    "Schlafzimmer": {
+        "Doppelbett": 1.5,
+        "Kleiderschrank": 2,
+        "Nachttische": 0.3,
+        "Kommode": 1,
+        "Schminktisch": 0.5,
+        "Bettwaesche": 0.4
+    },
+    "Badezimmer": {
+        "Waschmaschine": 1,
+        "Trockner": 1,
+        "Badezimmerschrank": 0.5,
+        "Spiegel": 0.2,
+        "Duschvorhang": 0.1,
+        "Handtuecher": 0.3
+    },
+    "Garten": {
+        "Gartenmoebel": 1,
+        "Grill": 0.5,
+        "Gartengeraete": 1.5,
+        "Kinderspielzeug": 0.5,
+        "Blumentoepfe": 0.3
+    },
+    "Keller": {
+        "Regale": 1.25,
+        "Kartons": 0.5,
+        "Sportgeraete": 1,
+        "Werkzeuge": 0.5,
+        "Werkbank": 1,
+        "Fahrrad": 1
+    },
+    "Arbeitszimmer": {
+        "Schreibtisch": 1,
+        "Buerostuhl": 0.5,
+        "Buecherregal": 1,
+        "Computer_Peripherie": 0.5,
+        "Drucker": 0.3,
+        "Akte": 0.2
+    },
+    "Abstellraum": {
+        "Staubsauger": 0.3,
+        "Besenschrank": 0.5,
+        "Buegelbrett": 0.4,
+        "Eimer": 0.2,
+        "Leiter": 0.6
+    }
+}

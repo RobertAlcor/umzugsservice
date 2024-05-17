@@ -1,0 +1,780 @@
+@font-face {
+  font-family: "Poppins";
+  src:
+    local("Poppins-Regular"),
+    url("/assets/font/Poppins-Regular.woff2") format("woff2"),
+    url("/assets/font/Poppins-Regular.woff") format("woff"),
+    url("/assets/font/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --red: #d11217;
+  --darkred: #800c10;
+  --black: #000;
+  --white: #fff;
+  --grey: #d8d8d8;
+  --green: #23a455;
+  --gold: #ffd700;
+  --light-gray: #f8f8f8;
+  --red-error: #ff3860;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+p,
+a,
+button {
+  font-size: 16px;
+  /* Standardizing font-size across the site */
+  line-height: 1.5;
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--red);
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--darkred);
+}
+
+.icon-s {
+  width: 35px;
+}
+
+.icon-l {
+  width: 50px;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+.list-unstyled li {
+  line-height: 3rem;
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.bg-grey {
+  background-color: var(--grey);
+}
+
+.line {
+  width: 150px;
+  height: 2px;
+  background-color: var(--black);
+  margin: 1rem 0;
+}
+
+.line-center {
+  width: 150px;
+  height: 2px;
+  background-color: var(--black);
+  margin: 1rem auto;
+}
+
+/* PRE HEADER */
+
+.s-header .vorwahl {
+  color: var(--red);
+  font-size: 1.5rem;
+}
+
+/* PRE HEADER END */
+
+/* NAVBAR */
+
+.navbar {
+  position: sticky;
+  z-index: 1020;
+  background-color: var(--white);
+}
+
+.navbar.sticky-top {
+  z-index: 1020;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+  height: auto;
+  width: 10vw;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand img {
+    width: 200px;
+  }
+}
+
+/* Link-Effekte */
+.nav-link {
+  color: var(--black);
+  position: relative;
+  padding: 8px 15px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 5px;
+  height: 2px;
+  background-color: var(--red);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  left: 0;
+  width: 100%;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+}
+
+.dropdown-item:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+  .navbar-brand img {
+    width: 200px;
+    /* Adjust image size on smaller screens */
+  }
+}
+
+/* NAVBAR END */
+
+/* HERO */
+.hero {
+  background: #f8f9fa;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.play-button:hover {
+  background: #fff;
+}
+
+.play-button i {
+  font-size: 2rem;
+  color: #dc3545;
+}
+
+/* VIDEO END */
+
+/* SMALL HEADER */
+.s-header {
+  background-color: var(--grey);
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.vorwahl {
+  color: var(--red);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* SMALL HEADER END */
+
+.hero :is(h1, h2) {
+  color: var(--red);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/img/bg-umzugsexperten.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* SUBHERO */
+
+.line-bg {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 40px 40px;
+}
+
+/* SUBHERO END */
+
+/* BILDGALLERY */
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* BILDGALLERY end */
+
+.umzugsleistungen img {
+  position: relative;
+  margin: 1rem;
+  width: 100px;
+  height: 130px;
+}
+
+/* FOOTER */
+
+.footerimg {
+  width: 200px;
+  height: auto;
+}
+
+/* FOOTER END */
+
+/* BEWERTUNGEN */
+
+/* Stil für die "Scroll to Top"-Schaltfläche */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 50%;
+  padding: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--red);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  max-width: 300px;
+}
+
+.review-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gold);
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.review-text {
+  font-size: 0.9rem;
+}
+
+.card-body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+#review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.masonry {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .review {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* BEWERTUNGEN END */
+
+/* BEFORE AFTER  */
+
+.img-left {
+  position: relative;
+  z-index: 1;
+}
+
+.img-left::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  border-left: 5px solid var(--red);
+  border-top: 5px solid var(--red);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.img-left::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 200px;
+  border-right: 5px solid var(--red);
+  border-bottom: 5px solid var(--red);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+/* BEFORE AFTER  ENDE */
+
+/* CARDS */
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* CARDS END */
+
+/* LIGHTBOX FANCY GALLERY INDEX */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.image-box img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* LIGHTBOX FANCY GALLERY INDEX END */
+
+/* BANNER IMG */
+
+.bannerimg {
+  position: relative;
+  z-index: 0;
+}
+
+.bannerimg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/img/bg-umzugsexperten.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* BANNER  IMG ENDE*/
+
+/* PREISE */
+
+.price span {
+  font-size: 1.5rem;
+  color: var(--red);
+}
+
+.price small {
+  font-size: 0.6rem;
+}
+
+/* PREISE ENDE */
+
+/* UMZUGSTIPPS */
+
+.thumbtipp {
+  width: 80px;
+}
+
+/* UMZUGSTIPPS ENDE */
+
+/* KONTAKT */
+
+.alfredimg {
+  width: 200px;
+  height: auto;
+}
+
+/* KONTAKT ENDE */
+
+/* UMZUGSRECHNER */
+
+/* Einführungsbereich */
+/* Section styling */
+#introduction {
+  padding: 20px 0; /* Reduziertes Padding */
+}
+
+.intro-content h1 {
+  font-size: 2rem; /* Kleinere Schriftgröße */
+  color: #333;
+  margin-bottom: 10px; /* Weniger Abstand unten */
+}
+
+.intro-content .highlight {
+  color: #d11217;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.intro-content p {
+  font-size: 1rem; /* Kleinere Schriftgröße */
+  color: #666;
+  margin-bottom: 10px; /* Weniger Abstand unten */
+}
+
+/* Progress bar styling */
+.progress-container {
+  max-width: 600px;
+  margin: 10px auto; /* Weniger Abstand oben und unten */
+}
+
+.progress {
+  background: rgba(224, 224, 224, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  background: var(--red);
+  color: #fff;
+  text-align: center;
+  transition: width 0.6s ease;
+  border-radius: 20px;
+  font-size: 1rem; /* Größere Schriftgröße */
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+/* Animated text */
+.animated-text {
+  position: relative;
+  display: inline-block;
+  animation: fade-in-up 1.5s ease-out;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icon rotate animation */
+.icon-rotate {
+  animation: rotate 4s linear infinite;
+  fill: var(--red);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+
+.musthave {
+  color: var(--red-error);
+}
+
+/* Buttons Styling */
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--white);
+  font-size: 16px;
+  background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+  color: var(--white);
+}
+
+.format {
+  color: var(--red-error);
+  font-size: 12px;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Allgemeine Stil- und Layout-Anpassungen */
+#room-buttons button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.furniture-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.furniture-item .input-group {
+  flex-grow: 1;
+}
+
+.furniture-item .form-label {
+  margin-left: 10px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.furniture-count {
+  width: 50px;
+}
+
+#furniture-selection {
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+#inventory-list {
+  padding-left: 20px;
+}
+
+.input-group {
+  width: 250px;
+  align-items: center;
+}
+
+.input-group input {
+  max-width: 60px;
+  text-align: center;
+}
+
+
+
+/* POPUP MODAL besichtigung */
+.modal {
+  display: none; /* Ausblenden standardmäßig */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px; /* Hinzugefügt für kleinen Abstand vom Bildschirmrand */
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 600px; /* Maximalbreite des Modals */
+  border-radius: 10px; /* Abgerundete Ecken */
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* UMZUGSRECHNER ENDE */
+
+/* BLOG */
+
+#blog-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Styling für die Bilder */
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.blog-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Styling für die Blog-Post-Links */
+.blog-post-link {
+  text-decoration: none;
+  color: var(--red);
+  transition: 0.3s ease;
+  padding: 20px;
+}
+
+.blog-post-link:hover {
+  cursor: pointer;
+  background-color: var(--grey);
+  border-radius: 20px;
+}
+
+/* Styling für Überschriften und Texte */
+h2.blog-titel {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+/* Styling für Datum und Kategorie */
+.blog-date,
+.blog-category {
+  font-style: italic;
+  color: #666;
+}
+
+/* BLOG ENDE */

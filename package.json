@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "masonry-layout": "^4.2.2"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5"
+  }
+}
