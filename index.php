@@ -13,14 +13,13 @@
   <meta property="business:contact_data:region" content="Wien" />
   <meta property="business:contact_data:email" content="office@dieumzugsexperten.at" />
   <meta property="business:contact_data:phone_number" content="+4318860411" />
-  <title>Umzug Umzugsfirma Umzugsservice Übersiedlung Wien</title>
+  <title>Umzugsfirma Wien - Stressfreie Umzüge mit den UmzugsExperten</title>
   <link rel="canonical" href="https://www.dieumzugsexperten.at/">
-
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [{
-        "@type": "WebSite",
+        "@type": "ProfessionalService",
         "@id": "https://www.dieumzugsexperten.at/#website",
         "url": "https://www.dieumzugsexperten.at/",
         "name": "Umzug Wien, Transportfirma Wien, M\u00f6beltransport Wien, Umzugsfirma Wien - dieumzugsexperten.at",
@@ -69,28 +68,30 @@
 
   <main>
 
-  <section class="hero pt-5 bg-light">
-  <div class="container mt-lg-5">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-6 fw-bold">Umzugsservice Wien – Ihre Umzugsfirma in Wien</h1>
-        <h2 class="text-muted my-4">Günstiger Umzug in Wien mit <span class="text-danger">UmzugsExperten</span></h2>
-        <p>
-          Auf der Suche nach einer verlässlichen <strong>Umzugsfirma in Wien</strong>? Unsere erfahrenen Umzugsexperten garantieren einen effizienten und stressfreien Umzug zu fairen Preisen. Egal ob <strong>Privatumzug</strong> oder <strong>Firmenumzug</strong> – wir sind Ihr Partner für jeden Umzugsbedarf. Kontaktieren Sie uns für ein kostenloses, individuelles Angebot.
-        </p>
-        <a href="kontakt" class="btn btn-outline-primary">Jetzt Angebot holen</a>
-      </div>
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <div class="video-container shadow-sm">
-          <iframe src="https://www.youtube-nocookie.com/embed/N9uzkacHthE?autoplay=0&loop=0&playlist=N9uzkacHthE&mute=1&modestbranding=0&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%; height:100%;"></iframe>
-          <div class="play-button" role="button" aria-label="Video abspielen">
-            <i class="bi bi-play-fill"></i>
-          </div>
+  <section class="py-5 hero">
+        <div class="container py-lg-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Hauptüberschrift mit Keyword -->
+                    <h1 class="fw-bold display-4 text-red">Umzugsfirma Wien</h1>
+                    <!-- Unterüberschrift mit Keyword -->
+                    <h2 class="h4">Profis für Ihren stressfreien Privatumzug in Wien</h2>
+                    <p>
+                        <span class="text-red fw-bold"><span class="fw-bold text-black">Die</span>UmzugsExperten</span> sind Ihr professioneller Partner für Umzüge und Privatumzüge in Wien und Umgebung. Wir bieten Ihnen ein umfassendes Leistungsspektrum für Ihren Umzug – von der Planung bis zur Durchführung. Unsere erfahrenen Umzugshelfer von dieUmzugsExperten sorgen für einen reibungslosen Ablauf und kümmern sich um alle Details.
+                    </p>
+                    <!-- Call-to-Action-Button -->
+                    <a href="tel:+4318860411" class="btn btn-primary">
+                        <img src="/assets/icons/call-white.svg" alt="Anrufen" class="icon-s"> 01 886 0 411
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="successvideo">
+                        <iframe src="https://www.youtube-nocookie.com/embed/67G1V1jFNfk?autoplay=1&mute=1&loop=1&playlist=67G1V1jFNfk" title="Umzugsfirma in Wien mit die Umzugsexperten" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -117,7 +118,7 @@
       <div class="container py-lg-5">
         <div class="row">
           <div class="col-lg-6 d-none d-md-block img-left p-0 p-lg-5">
-            <img src="/assets/img/umzugsfirma-wien-übersiedlung-wien-privatumzug-wien-umzug-billigst.webp" alt="BILD" class="img-fluid rounded shadow">
+            <img src="/assets/img/umzugsfirma-wien-uebersiedlung-wien-privatumzug-wien-umzug-billigst.webp" alt="BILD" class="img-fluid rounded shadow">
           </div>
           <div class="col-lg-6 mt-lg-5 ">
             <h2 class="fw-bold">Umzugsfirma Wien – Leistungen</h2>
@@ -157,7 +158,7 @@
             <div class="card">
               <div class="card-body">
                 <span class="card-title h5 fw-bold">
-                  <img src="/assets/icons/icon-1-umzugsexperten-3-schritte-plan.png" class="card-img-top icon-l" alt="Umzugsservice Wien">
+                  <img src="/assets/icons/icon-1-umzugsexperten-3-schritte-plan.png" class="icon-xl" alt="Umzugsservice Wien">
                   Anfrage senden
                 </span>
                 <p class="card-text">
@@ -170,7 +171,7 @@
             <div class="card">
               <div class="card-body">
                 <span class="card-title h5 fw-bold">
-                  <img src="/assets/icons/icon-2-umzugsexperten-3-schritte-plan.png" class="card-img-top icon-l" alt="Umzugsservice Wien">
+                  <img src="/assets/icons/icon-2-umzugsexperten-3-schritte-plan.png" class="icon-xl" alt="Umzugsservice Wien">
                   Angebot erhalten
                 </span>
                 <p class="card-text">
@@ -183,7 +184,7 @@
             <div class="card">
               <div class="card-body">
                 <span class="card-title h5 fw-bold">
-                  <img src="/assets/icons/icon-3-umzugsexperten-3-schritte-plan.png" class="card-img-top icon-l" alt="Umzugsservice Wien">
+                  <img src="/assets/icons/icon-3-umzugsexperten-3-schritte-plan.png" class="icon-xl" alt="Umzugsservice Wien">
                   Entspannt umziehen
                 </span>
                 <p class="card-text">
@@ -231,12 +232,12 @@
           <h2 class="fw-bold">Weil uns Ihr Umzug am Herzen liegt</h2>
           <h3 class="fst-italic fs-5">Sind Sie bei uns komplett versichert</h3>
           <div class="col-lg-6">
-            <img src="/assets/img/UNIQA-Logo.svg" alt="" class="w-75 img-fluid">
-          </div>
-          <div class="col-lg-6">
             <p>
               <span class="text-red fw-bold"><span class="fw-bold text-black">Die</span>UmzugsExperten</span> sind Ihr professioneller Partner für Umzüge in Wien und Umgebung. Deshalb arbeiten wir eng mit unserem Versicherungspartner zusammen, um Ihnen die beste Sicherheit für Ihren Umzug zu bieten. Mit unserer Versicherung sind Sie optimal geschützt und können sich entspannt zurücklehnen. Versicherter Transport Ihres Umzugsgutes ist bei uns immer sichergestellt – egal ob Privatumzug oder Firmenumzug.
             </p>
+          </div>
+          <div class="col-lg-6 text-end">
+            <img src="/assets/img/UNIQA-Logo.svg" alt="" class="w-75 img-fluid">
           </div>
         </div>
       </div>
@@ -379,15 +380,19 @@
         <div class="row text-center">
           <div class="col-lg-12">
             <h2>PROFESSIONELLE UMZUGSFIRMA MIT FULL SERVICE LEISTUNGEN</h2>
-            <p>
-              Bei <span class="text-red fw-bold"><span class="fw-bold text-black">Die</span>UmzugsExperten</span> aus Wien bekommen Sie die Festpreisgarantie für Umzüge und Übersiedlungen. Ordern Sie die Profis und überlassen Sie auch preislich nichts dem Zufall.
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                <p>
+                  Bei <span class="text-red fw-bold"><span class="fw-bold text-black">Die</span>UmzugsExperten</span> aus Wien bekommen Sie die Festpreisgarantie für Umzüge und Übersiedlungen. Ordern Sie die Profis und überlassen Sie auch preislich nichts dem Zufall.
 
-              Vereinbaren Sie noch heute einen Besichtigungstermin oder buchen Sie uns direkt unter <a href="tel:+4318860411">+43 1 8860411</a>.
+                  Vereinbaren Sie noch heute einen Besichtigungstermin oder buchen Sie uns direkt unter <a href="tel:+4318860411">+43 1 8860411</a>.
 
-              Was Kunden zu unserem umfassenden Service sagen, lesen Sie in unserer Referenzliste.
+                  Was Kunden zu unserem umfassenden Service sagen, lesen Sie in unserer Referenzliste.
 
-              Wir freuen uns auf Ihre Kontaktaufnahme.
-            </p>
+                  Wir freuen uns auf Ihre Kontaktaufnahme.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -467,10 +472,12 @@
   </main>
 
 
-
   <?php include 'includes/footer.php'; ?>
   <?php include 'includes/footer-small.php'; ?>
+
   <?php include 'includes/scripts.html'; ?>
+
+  
 </body>
 
 </html>

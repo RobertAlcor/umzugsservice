@@ -61,4 +61,6 @@ module.exports = {
 
   // Erweiterte Konfiguration für automatisches Öffnen im Browser
   openBrowser: true, // Der Browser öffnet sich automatisch beim Serverstart
+
+  browser: "chrome", // Standardbrowser für die automatische Öffnung
 };
